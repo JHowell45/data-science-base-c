@@ -16,4 +16,7 @@ void display_vector(vector_t *vec);
 
 bool vector_insert(vector_t *vec, size_t index, double value);
 
+vector_t *vector_scalar_multiplication(vector_t *vec, double scalar);
+double vector_cross_product(vector_t *v1, vector_t *v2);
+
 #endif
