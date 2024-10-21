@@ -1,0 +1,3 @@
+/home/jacob/Code/data-science-base-c/build/CMakeFiles/data-science-base.dir
+/home/jacob/Code/data-science-base-c/build/CMakeFiles/edit_cache.dir
+/home/jacob/Code/data-science-base-c/build/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libdata-science-base.a "CMakeFiles/data-science-base.dir/lib/src/vector.c.o"
+/usr/bin/ranlib libdata-science-base.a
