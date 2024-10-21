@@ -31,6 +31,14 @@ void display_vector(vector_t *vec) {
   printf("]\n");
 }
 
-bool vector_insert(vector_t *vec, size_t index, double value) {}
+bool vector_insert(vector_t *vec, size_t index, double value) {
+  vec->items[index] = value;
+}
 
-vector_t *vector_scalar_multiplication(vector_t *vec, double scalar) {}
+vector_t *vector_scalar_multiplication(vector_t *vec, double scalar) {
+  vector_t *results = new_vector(vec->size);
+  for (int i = 0; i < vec->size; i++) {
+    results->items[i] = vec->items[i] * scalar;
+  }
+  return results;
+}
