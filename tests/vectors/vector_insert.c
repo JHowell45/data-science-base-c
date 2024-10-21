@@ -7,7 +7,7 @@ void setUp(void) {}
 
 void tearDown(void) {}
 
-static void test_initial_value_is_zero_for_created_vector(void) {
+static void test_values_are_zero_for_created_vector(void) {
   vector_t *vec = new_vector(VECTOR_SIZE);
   for (int i = 0; i < VECTOR_SIZE; i++) {
     TEST_ASSERT_EQUAL_DOUBLE(vector_get(vec, i), 0);
@@ -25,7 +25,7 @@ static void test_insert_value_to_vector(void) {
 
 int main(void) {
   UNITY_BEGIN();
-  RUN_TEST(test_initial_value_is_zero_for_created_vector);
+  RUN_TEST(test_values_are_zero_for_created_vector);
   RUN_TEST(test_insert_value_to_vector);
   return UNITY_END();
 }
