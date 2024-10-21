@@ -14,6 +14,8 @@ vector_t *random_vector(size_t size);
 void free_vector(vector_t *vec);
 void display_vector(vector_t *vec);
 
+double vector_get(vector_t *vec, size_t index);
+
 bool vector_insert(vector_t *vec, size_t index, double value);
 
 vector_t *vector_scalar_multiplication(vector_t *vec, double scalar);

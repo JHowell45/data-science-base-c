@@ -31,6 +31,8 @@ void display_vector(vector_t *vec) {
   printf("]\n");
 }
 
+double vector_get(vector_t *vec, size_t index) { return vec->items[index]; }
+
 bool vector_insert(vector_t *vec, size_t index, double value) {
   vec->items[index] = value;
 }
