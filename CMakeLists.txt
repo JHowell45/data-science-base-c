@@ -8,6 +8,12 @@ project(data-science-base-c)
 set(ROOT_DIR ${CMAKE_CURRENT_SOURCE_DIR}/lib)
 
 ####################################################################################
+# Install OpenBLAS:
+####################################################################################
+set(BLA_VENDER OpenBLAS)
+find_package(BLAS REQUIRED)
+
+####################################################################################
 # Create Library:
 ####################################################################################
 file(GLOB LIB_SOURCES ${ROOT_DIR}/src/*.c)
@@ -15,6 +21,11 @@ file(GLOB LIB_HEADERS ${ROOT_DIR}/include/*.h)
 set(LIB_NAME data-science-base)
 add_library(${LIB_NAME} STATIC ${LIB_SOURCES} ${LIB_HEADERS})
 target_include_directories(${LIB_NAME} PUBLIC ${ROOT_DIR}/include)
+if(BLAS_FOUND)
+    message("OpenBLAS found.")
+    include_directories(${BLAS_INCLUDE_DIRS})
+    target_link_libraries(${LIB_NAME} ${BLAS_LIBRARIES})
+endif(BLAS_FOUND)
 
 ####################################################################################
 # Install Test Framework:
