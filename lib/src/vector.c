@@ -10,6 +10,14 @@ vector_t *new_vector(size_t size) {
   return vec;
 }
 
+vector_t *new_vector_with_default(size_t size, double default_value) {
+  vector_t *vec = new_vector(size);
+  for (register int i = 0; i < vec->size; i++) {
+    vector_insert(vec, i, default_value);
+  }
+  return vec;
+}
+
 vector_t *random_vector(size_t size) {}
 
 void free_vector(vector_t *vec) {

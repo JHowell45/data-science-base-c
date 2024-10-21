@@ -10,6 +10,7 @@ typedef struct {
 } vector_t;
 
 vector_t *new_vector(size_t size);
+vector_t *new_vector_with_default(size_t size, double default_value);
 vector_t *random_vector(size_t size);
 void free_vector(vector_t *vec);
 void display_vector(vector_t *vec);
