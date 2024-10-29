@@ -1,6 +1,5 @@
 #include "unity.h"
 #include "vector.h"
-#include <cblas.h>
 
 #define VECTOR_SIZE 5
 
