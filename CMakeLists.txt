@@ -55,3 +55,8 @@ set(VECTOR_INSERT vector_scalar_multiplication)
 add_executable(${VECTOR_INSERT}_test tests/vectors/${VECTOR_INSERT}.c)
 target_link_libraries(${VECTOR_INSERT}_test ${LIB_NAME} unity)
 add_test(${VECTOR_INSERT}_test ${VECTOR_INSERT}_test)
+
+set(VECTOR_DOT_PRODUCT vector_dot_product)
+add_executable(${VECTOR_DOT_PRODUCT}_test tests/vectors/${VECTOR_DOT_PRODUCT}.c)
+target_link_libraries(${VECTOR_DOT_PRODUCT}_test ${LIB_NAME} unity)
+add_test(${VECTOR_DOT_PRODUCT}_test ${VECTOR_DOT_PRODUCT}_test)
