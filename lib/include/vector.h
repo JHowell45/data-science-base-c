@@ -20,7 +20,7 @@ double vector_get(vector_t *vec, size_t index);
 bool vector_insert(vector_t *vec, size_t index, double value);
 
 vector_t *vector_scalar_multiplication(vector_t *vec, double scalar);
-double vector_dot_product(vector_t *v1, vector_t *v2, double theta);
+double vector_dot_product(vector_t *v1, vector_t *v2);
 double vector_cross_product(vector_t *v1, vector_t *v2);
 
 #endif

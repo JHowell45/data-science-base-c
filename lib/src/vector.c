@@ -2,6 +2,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <cblas.h>
 
 vector_t *new_vector(size_t size) {
   vector_t *vec = malloc(sizeof(vector_t));
@@ -51,4 +52,8 @@ vector_t *vector_scalar_multiplication(vector_t *vec, double scalar) {
     results->items[i] = vec->items[i] * scalar;
   }
   return results;
+}
+
+double vector_dot_product(vector_t *v1, vector_t *v2) {
+    return cblas_ddot(v1->size, v1->items, 1, v2->items, 1);
 }
