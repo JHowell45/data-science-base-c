@@ -1,16 +1,18 @@
 #ifndef MATRIX_H
 #define MATRIX_H
 
+#include <stdbool.h>
 #include <stdlib.h>
 
 typedef struct {
-    double *items;
-    size_t rows;
-    size_t columns;
+  double *items;
+  size_t rows;
+  size_t columns;
 } matrix_t;
 
 matrix_t *new_matrix(size_t rows, size_t columns);
-matrix_t *new_matrix_with_default(size_t rows, size_t columns, double default_value);
+matrix_t *new_matrix_with_default(size_t rows, size_t columns,
+                                  double default_value);
 matrix_t *random_matrix(size_t rows, size_t columns);
 void free_matrix(matrix_t *m);
 void display_matrix(matrix_t *m);
