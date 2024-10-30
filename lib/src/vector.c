@@ -48,9 +48,8 @@ bool vector_insert(vector_t *vec, size_t index, double value) {
 
 vector_t *vector_scalar_multiplication(vector_t *vec, double scalar) {
   vector_t *results = new_vector(vec->size);
-  for (int i = 0; i < vec->size; i++) {
-    results->items[i] = vec->items[i] * scalar;
-  }
+  cblas_dcopy(vec->size, vec->items, 1, results->items, 1);
+  cblas_dscal(vec->size, scalar, results->items, 1);
   return results;
 }
 
