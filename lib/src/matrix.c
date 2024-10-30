@@ -1,6 +1,7 @@
 #include "matrix.h"
 #include "vector.h"
 
+#include <cblas.h>
 #include <stdlib.h>
 
 matrix_t *new_matrix(size_t rows, size_t columns) {
@@ -27,5 +28,9 @@ bool matrix_insert(matrix_t *m, size_t x, size_t y, double value) {}
 
 matrix_t *matrix_dot_vector(matrix_t *m, vector_t *v) {
   vector_t *results = new_vector(v->size);
+  cblas_dgemv(CblasRowMajor, CblasNoTrans, m->rows, m->columns, 1.0, m->items,
+              m->rows * m->columns, v->items, v->size, 1.0, results->items,
+              results->size);
+  return results;
 }
 matrix_t *matrix_dot_matrix(matrix_t *m1, matrix_t *m2) {}
